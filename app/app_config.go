@@ -56,6 +56,8 @@ import (
 	ignitewasmfixmodulev1 "ignite-wasm-fix/api/ignitewasmfix/ignitewasmfix/module"
 	_ "ignite-wasm-fix/x/ignitewasmfix/module" // import for side-effects
 	ignitewasmfixmoduletypes "ignite-wasm-fix/x/ignitewasmfix/types"
+
+	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 )
 
@@ -94,6 +96,7 @@ var (
 		circuittypes.ModuleName,
 		// chain modules
 		ignitewasmfixmoduletypes.ModuleName,
+		wasmtypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/initGenesis
 	}
 
@@ -119,6 +122,7 @@ var (
 		ibcfeetypes.ModuleName,
 		// chain modules
 		ignitewasmfixmoduletypes.ModuleName,
+		wasmtypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/beginBlockers
 	}
 
@@ -138,6 +142,7 @@ var (
 		ibcfeetypes.ModuleName,
 		// chain modules
 		ignitewasmfixmoduletypes.ModuleName,
+		wasmtypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/endBlockers
 	}
 
@@ -158,6 +163,7 @@ var (
 		{Account: ibctransfertypes.ModuleName, Permissions: []string{authtypes.Minter, authtypes.Burner}},
 		{Account: ibcfeetypes.ModuleName},
 		{Account: icatypes.ModuleName},
+		{Account: wasmtypes.ModuleName, Permissions: []string{authtypes.Burner}},
 		// this line is used by starport scaffolding # stargate/app/maccPerms
 	}
 
