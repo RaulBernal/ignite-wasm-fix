@@ -1,0 +1,15 @@
+syntax = "proto3";
+package ignitewasmfix.ignitewasmfix;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+
+option go_package = "ignite-wasm-fix/x/ignitewasmfix/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (amino.name) = "ignitewasmfix/x/ignitewasmfix/Params";
+  option (gogoproto.equal) = true;
+
+  
+}
