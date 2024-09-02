@@ -280,6 +280,8 @@ func New(
 
 	app.ModuleManager.RegisterInvariants(app.CrisisKeeper)
 
+	app.RegisterUpgradeHandlers()
+
 	// create the simulation manager and define the order of the modules for deterministic simulations
 	overrideModules := map[string]module.AppModuleSimulation{
 		authtypes.ModuleName: auth.NewAppModule(app.appCodec, app.AccountKeeper, authsims.RandomGenesisAccounts, app.GetSubspace(authtypes.ModuleName)),
