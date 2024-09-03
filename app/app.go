@@ -253,7 +253,7 @@ func New(
 
 	// add to default baseapp options
 	// enable optimistic execution
-	baseAppOptions = append(baseAppOptions, baseapp.SetOptimisticExecution())
+	// baseAppOptions = append(baseAppOptions, baseapp.SetOptimisticExecution())
 
 	// build app
 	app.App = appBuilder.Build(db, traceStore, baseAppOptions...)
